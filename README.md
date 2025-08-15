@@ -1,5 +1,7 @@
 # Astro Starter Kit: Basics
 
+Thanks for [Milix-M/new_portfolio](https://github.com/Milix-M/new_portfolio)
+
 ```sh
 pnpm create astro@latest -- --template basics
 ```

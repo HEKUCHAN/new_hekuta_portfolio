@@ -1,7 +1,7 @@
-import Parser from 'rss-parser';
 import dayjs from 'dayjs';
+import Parser from 'rss-parser';
 
-const MY_ZENN_USERNAME = "milix_m"
+const MY_ZENN_USERNAME = "hekuchandao"
 
 interface Post {
     title: string;

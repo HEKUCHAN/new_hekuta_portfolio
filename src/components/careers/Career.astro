@@ -17,7 +17,7 @@ const { startDate, endDate, company, position, descriptions } = Astro.props;
     </h3>
     {
         descriptions && (
-            // Certificationsのリストはspace-y-2だが、一つの塊であることと、読みやすさを両立しspace-y-1.5としている
+            // Interestsのリストはspace-y-2だが、一つの塊であることと、読みやすさを両立しspace-y-1.5としている
             <ul class="mt-1 list-disc list-inside text-gray-700 space-y-1.5">
                 {descriptions?.map((description) => (
                     <li>{description}</li>

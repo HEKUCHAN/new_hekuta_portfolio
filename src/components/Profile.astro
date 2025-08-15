@@ -1,211 +1,202 @@
 ---
 import { Image } from "astro:assets";
-import { SiSpeakerdeck, SiZenn } from "react-icons/si";
 import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import Career from "./careers/Career.astro";
-import Works from "./profile/Works.astro";
-import Language from "./profile/techStack/Language.astro";
-import Framework from "./profile/techStack/Framework.astro";
-import Database from "./profile/techStack/Database.astro";
-import Cloud from "./profile/techStack/Cloud.astro";
-import Middleware from "./profile/techStack/Middleware.astro";
-import Other from "./profile/techStack/Other.astro";
+import { SiInstagram, SiZenn } from "react-icons/si";
 import LastArticles from "./articles/LastArticles.astro";
 import Careers from "./careers/Careers.astro";
+import Works from "./profile/Works.astro";
+import Cloud from "./profile/techStack/Cloud.astro";
+import Database from "./profile/techStack/Database.astro";
+import Framework from "./profile/techStack/Framework.astro";
+import Language from "./profile/techStack/Language.astro";
+import Middleware from "./profile/techStack/Middleware.astro";
+import Other from "./profile/techStack/Other.astro";
 
-const myName = "Milix-M";
-const myRole = "バックエンド・インフラエンジニア";
+import TUTBusImage from "../../public/tut-bus.png";
+
+
+const myName = "広瀬 エイトル";
+const myNameInEnglish = "Heitor Hirose";
+const myRole = "学生エンジニア";
 ---
 
 <!-- ===== コンテンツコンテナ ===== -->
 <div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
-    <!-- ===== ヘッダー情報 ===== -->
-    <header class="mb-16 flex items-center space-x-6">
-        <Image
-            src="https://pbs.twimg.com/profile_images/1764926813816651776/n9jam86p_400x400.jpg"
-            alt="アイコン画像"
-            class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-300"
-            inferSize
-            priority
-        />
-        <div>
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
-                {myName}
-            </h1>
-            <p class="text-lg text-gray-600 mt-1">{myRole}</p>
-        </div>
-    </header>
+  <!-- ===== ヘッダー情報 ===== -->
+  <header class="mb-16 flex items-center space-x-6">
+    <Image
+      src="https://pbs.twimg.com/profile_images/1955655397848801280/i4rwM9a7_400x400.jpg"
+      alt="アイコン画像"
+      class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-300"
+      inferSize
+      priority
+    />
+    <div>
+      <p class="text-gray-500 text-xl mb-1">{myName}</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+        {myNameInEnglish}
+      </h1>
+      <p class="text-lg text-gray-600 mt-1">{myRole}</p>
+    </div>
+  </header>
 
-    <main>
-        <!-- ===== Aboutセクション ===== -->
-        <section id="about" class="mb-16">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
-                About
-            </h2>
-            <div
-                id="about-content"
-                class="text-base text-gray-700 leading-relaxed space-y-4"
-            >
-                <p>
-                    2024年4月から現在まで名古屋のシステム開発会社に勤務。<br />
-                    バックエンド・インフラエンジニアとしてJavaのSpringを使用したマイクロサービス開発やCPUのメモリ暗号化機能・OpenStack・KVMを使用したインフラ構築業務を担当。<br
-                    />
-                    現在はPython・PyTorch・Llamaを使用した映像解析AIの開発案件に上流工程から携わる。
-                </p>
-            </div>
-        </section>
+  <main>
+    <!-- ===== Aboutセクション ===== -->
+    <section id="about" class="mb-16">
+      <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+        About
+      </h2>
+      <div
+        id="about-content"
+        class="text-base text-gray-700 leading-relaxed space-y-4"
+      >
+        <p>
+          愛知県西尾市出身。学生時代からスタートアップや業務委託案件に参画し、バックエンド・フロントエンド問わず幅広い開発に携わってきました。Python
+          や TypeScript
+          を中心に、API開発、UI改善、外部サービス連携などの実務を経験しました。
+          <br />
+          <br />
+          現在は株式会社AIdeaLabで新機能開発、バグ修正などに取り組みつつ、業務を通じてインフラ設計やログ設計の重要性を学び、実務レベルで通用する形に落とし込むことを目指しています。
+          <br />
+          <br />
+          Snowflakeやデータパイプラインの設計・運用にも強い関心を持っていて、将来はデータエンジニア、またはデータサイエンティストとしてのキャリアも視野に入れています。
+          エンジニアとしてのモットーは「未知の領域でも臆せず挑戦し、糧にすること」です。
+        </p>
+      </div>
+    </section>
+  </main>
 
-        <!-- ===== Tech Stackセクション ===== -->
-        <section id="tech-stack" class="mb-16">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
-                Tech Stack
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                <div>
-                    <h3 class="font-bold text-lg mb-3">Language</h3>
-                    <Language />
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg mb-3">Framework</h3>
-                    <Framework />
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg mb-3">DataBase</h3>
-                    <Database />
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg mb-3">Cloud</h3>
-                    <Cloud />
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg mb-3">Middleware</h3>
-                    <Middleware />
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg mb-3">Other</h3>
-                    <Other />
-                </div>
-            </div>
-        </section>
+  <!-- ===== Tech Stackセクション ===== -->
+  <section id="tech-stack" class="mb-16">
+    <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+      Tech Stack
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+      <div>
+        <h3 class="font-bold text-lg mb-3">Language</h3>
+        <Language />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-3">Framework</h3>
+        <Framework />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-3">DataBase</h3>
+        <Database />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-3">Cloud</h3>
+        <Cloud />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-3">Middleware</h3>
+        <Middleware />
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-3">Other</h3>
+        <Other />
+      </div>
+    </div>
+  </section>
 
-        <!-- ===== Careerセクション ===== -->
-        <section id="career" class="mb-16">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
-                Career
-            </h2>
-            <Careers />
-        </section>
+  <!-- ===== Careerセクション ===== -->
+  <section id="career" class="mb-16">
+    <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+      Career
+    </h2>
+    <Careers />
+  </section>
 
-        <!-- ===== Certificationsセクション ===== -->
-        <section id="certifications" class="mb-16">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
-                Certifications
-            </h2>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li>
-                    Oracle Certified Java Programmer, Silver SE 11
-                    (2024年5月取得)
-                </li>
-                <li>
-                    Oracle Certified Java Programmer, Gold SE 11 (2024年8月取得)
-                </li>
-                <li>AWS Certified Cloud Practitioner (2025年4月取得)</li>
-            </ul>
-        </section>
+  <!-- ===== Interestsセクション ===== -->
+  <section id="interests" class="mb-16">
+    <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+      Interests
+    </h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>ログ収集、分析基盤の設計・構築・運用</li>
+      <li>データパイプラインの設計・運用</li>
+      <li>Snowflakeを活用したデータ分析基盤の構築</li>
+      <li>LLMの活用やRAG、ワークフローなどの生成AI技術の活用・応用</li>
+    </ul>
+  </section>
 
-        <!-- ===== Worksセクション ===== -->
-        <section id="works" class="mb-16">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
-                Works
-            </h2>
+  <!-- ===== Worksセクション ===== -->
+  <section id="works" class="mb-16">
+    <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
+      Works
+    </h2>
 
-            <!-- 作品リスト -->
-            <div class="space-y-12">
-                <Works
-                    projectName="Passgen"
-                    projectDescription="数クリックで簡単に安全なパスワードが生成できるChrome拡張機能です。"
-                    projectImage="https://lh3.googleusercontent.com/wTdQWu7PrcUc41HAk4IS_O6_Ux7ZmoMfctWkSG4Aq0DYq-NvIkoglJ_3Cj-DVktCvjCol36K__gZhfAoRURPDTeAuQ=s1280-w1280-h800"
-                    projectLink="https://chromewebstore.google.com/detail/passgen-a-simple-password/jibdlcehfeapakbemeombfeophiahmcg"
-                    technologies={["React", "MUI", "TypeScript"]}
-                />
+    <!-- 作品リスト -->
+    <div class="space-y-12">
+      <Works
+        projectName="東京工科大学 - スクールバス時刻表"
+        projectDescription="ハッカソンで開発した非公式の東京工科大学のスクールバスの時刻表を提供するWebサイトです。日々の学生、教職員の生活を手助けすることを目的にして開発しております。（開発中）"
+        projectImage={TUTBusImage}
+        projectLink="https://tut-bus.lcn.ad.jp/"
+        githubLink="https://github.com/lc-tut/tut-bus"
+        technologies={["Next.js", "TypeScript", "Go", "TypeSpec"]}
+      />
 
-                <Works
-                    projectName="Authenticator"
-                    projectDescription="ブラウザ上で簡単に二段階認証のコードを生成することができるChrome拡張機能です。"
-                    projectImage="https://lh3.googleusercontent.com/vZPN1pQIwCSrhvyNGkfKXMLMnUXTa9auBITn3FP5ZFE50tIcBxi41L4H659L0yVppsOc_1Q7PPGrbehYAOARcKGd=s1280-w1280-h800"
-                    projectLink="https://chromewebstore.google.com/detail/authenticator/biblcaincgpfkamhjigfmdpdmbdeojcp"
-                    technologies={["React", "daisyUI(tailwind)", "TypeScript"]}
-                />
+      <p>Will continue to add more works...</p>
+    </div>
+  </section>
 
-                <Works
-                    projectName="Misskey Server"
-                    projectDescription="OCI上にVMサーバを構築、分散型ソーシャルネットワークソフトウェアである「Misskey」を使用し、1年半ほどSNSサービスを運営。"
-                    projectImage="https://misskey-hub.net/img/historical-materials/2024/acbedd05d6ef418498c6b9467dd0fe6c.webp"
-                    projectLink="https://misskey-hub.net/ja/"
-                    technologies={["Linux", "Misskey", "PostgreSQL"]}
-                />
-            </div>
-        </section>
+  <!-- ===== Latest Articlesセクション ===== -->
+  <section id="latest-articles" class="mb-16">
+    <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
+      Latest Articles
+    </h2>
+    <LastArticles />
+    <div class="text-right mt-6">
+      <a
+        href="https://zenn.dev/hekuchandao"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-600 hover:text-black hover:underline font-medium transition-colors"
+      >
+        Zennで他の記事も見る &rarr;
+      </a>
+    </div>
+  </section>
 
-        <!-- ===== Latest Articlesセクション ===== -->
-        <section id="latest-articles" class="mb-16">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
-                Latest Articles
-            </h2>
-            <LastArticles />
-            <div class="text-right mt-6">
-                <a
-                    href="https://zenn.dev/milix_m"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-600 hover:text-black hover:underline font-medium transition-colors"
-                >
-                    Zennで他の記事も見る &rarr;
-                </a>
-            </div>
-        </section>
-
-        <!-- ===== Socialセクション ===== -->
-        <section id="social">
-            <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
-                Social
-            </h2>
-            <p class="mb-4 text-gray-700">
-                仕事依頼やご相談は、以下のSNSアカウントへお気軽にご連絡ください。
-            </p>
-            <div class="flex space-x-5 mt-6">
-                <a
-                    href="https://x.com/_milix_m"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-gray-800 transition-colors"
-                    aria-label="X"><div class="text-2xl"><BsTwitterX /></div></a
-                >
-                <a
-                    href="https://github.com/Milix-M"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-gray-800 transition-colors"
-                    aria-label="GitHub"
-                    ><div class="text-2xl"><FaGithub /></div></a
-                >
-                <a
-                    href="https://zenn.dev/milix_m"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-gray-800 transition-colors"
-                    aria-label="Zenn"><div class="text-2xl"><SiZenn /></div></a
-                >
-                <a
-                    href="https://speakerdeck.com/milix_m"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-gray-500 hover:text-gray-800 transition-colors"
-                    aria-label="Speaker Deck"
-                    ><div class="text-2xl"><SiSpeakerdeck /></div></a
-                >
-            </div>
-        </section>
-    </main>
+  <!-- ===== Socialセクション ===== -->
+  <section id="social">
+    <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
+      Social
+    </h2>
+    <p class="mb-4 text-gray-700">
+      ご気軽に以下のSNSアカウントへご連絡ください。
+    </p>
+    <div class="flex space-x-5 mt-6">
+      <a
+        href="https://x.com/Heitor_Hirose"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-800 transition-colors"
+        aria-label="X"><div class="text-2xl"><BsTwitterX /></div></a
+      >
+      <a
+        href="https://www.instagram.com/hirose_heitor/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-800 transition-colors"
+        aria-label="Instagram"><div class="text-2xl"><SiInstagram /></div></a
+      >
+      <a
+        href="https://github.com/HEKUCHAN"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-800 transition-colors"
+        aria-label="GitHub"><div class="text-2xl"><FaGithub /></div></a
+      >
+      <a
+        href="https://zenn.dev/hekuchandao"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-500 hover:text-gray-800 transition-colors"
+        aria-label="Zenn"><div class="text-2xl"><SiZenn /></div></a
+      >
+    </div>
+  </section>
 </div>
