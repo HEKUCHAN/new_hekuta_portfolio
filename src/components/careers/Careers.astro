@@ -3,59 +3,77 @@ import Career from "./Career.astro";
 ---
 
 <div class="space-y-6">
-    <Career
-        startDate="2024年8月"
-        endDate="現在"
-        company="株式会社AIdeaLab"
-        position="フルスタックエンジニア（業務委託）"
-        descriptions={[
-            "TypeScript (Next.js, etc...), Go, Pythonを使用した新機能開発・UI改善・バグ修正",
-            "RAGの精度改善やLangChainを用いたワークフロー開発",
-            "受託開発における要件定義・設計・実装",
-        ]}
-    />
-    <Career
-        startDate="2025年2月"
-        endDate="2025年3月"
-        company="サイバーエージェント（Go College）"
-        position="短期インターン参加"
-        descriptions={[
-            "Goの基礎・Web実装、DB・Redis、テスト・パフォーマンスの集中学習",
-            "発展課題でクリーンアーキテクチャ導入 / OpenTelemetry・pprof・SigNozで計測環境を構築",
-            "コード品質やパフォーマンス改善の重要性を体感",
-        ]}
-    />
-    <Career
-        startDate="2024年5月"
-        endDate="2024年5月"
-        company="株式会社ゆめみ（1Dayインターン）"
-        position="ワークショップ参加"
-        descriptions={[
-            "要件定義に基づくAPI設計・DB設計のグループワーク",
-            "議論・役割分担・チェックリスト運用などチーム設計プロセスを学習",
-            "短時間での要件整理と設計ドキュメント化のスキルを強化",
-        ]}
-    />
-    <Career
-        startDate="2023年9月"
-        endDate="2024年8月"
-        company="株式会社Unicode"
-        position="バックエンドエンジニア（業務委託）"
-        descriptions={[
-            "配送会社APIとの連携機能設計・実装（ShipOne）",
-            "UI改善・デバッグ対応",
-            "複数の外部API仕様差異を吸収するバックエンド設計・実装",
-        ]}
-    />
-    <Career
-        startDate="2021年5月"
-        endDate="2022年6月"
-        company="株式会社doot"
-        position="フルスタックエンジニア（インターン）"
-        descriptions={[
-            "X（旧Twitter）クローラーの開発・運用",
-            "利用者フィードバックを元にしたUI改善",
-            "バックエンドAPIの新機能実装・バグ修正",
-        ]}
-    />
+  <Career
+    startDate="2024年8月"
+    endDate="現在"
+    company="株式会社AIdeaLab"
+    position="フルスタックエンジニア（業務委託）"
+    descriptions={[
+      "TypeScript (Next.js, etc...), Go, Pythonを使用した新機能開発・UI改善・バグ修正",
+      "RAGの精度改善やLangChainを用いたワークフロー開発",
+      "受託開発における要件定義・設計・実装",
+    ]}
+  />
+  <Career
+    startDate="2024年8月"
+    endDate="2024年9月"
+    company="株式会社サイバーエージェント"
+    position="バックエンドエンジニア（インターン）"
+    descriptions={[
+      "AI事業本部にてLLMを活用したプロダクト「AI POS」の開発に参画",
+      "LLM Observability基盤（Langfuse）の技術選定からアーキテクチャ設計、GKE上での構築まで",
+      "Otel Collectorを用いたログ収集アーキテクチャを設計し、Cloud Runのサイドカー構成で実装",
+      "複数のLLMフレームワーク（SmolAgents, LangGraph等）に対応した統合監視基盤を構築",
+    ]}
+    blogUrl="https://developers.cyberagent.co.jp/blog/archives/59703/"
+    blogTitle="CyberAgent - 【ミッション型インターン体験記】LLM Ops/Observability基盤の選定とLangfuseの構築"
+  />
+  <Career
+    startDate="2025年2月"
+    endDate="2025年3月"
+    company="株式会社サイバーエージェント（Go College）"
+    position="短期インターン参加"
+    descriptions={[
+      "Goの基礎・Web実装、DB・Redis、テスト・パフォーマンスの集中学習",
+      "発展課題でクリーンアーキテクチャ導入 / OpenTelemetry・pprof・SigNozで計測環境を構築",
+      "コード品質やパフォーマンス改善の重要性を体感",
+    ]}
+    blogUrl="https://zenn.dev/hekuchandao/articles/31b5bd1f8ca1d2"
+    blogTitle="Zenn - サイバーエージェント主催のGo Collegeで2週間かけて成長した話。"
+  />
+  <Career
+    startDate="2024年5月"
+    endDate="2024年5月"
+    company="株式会社ゆめみ（1Dayインターン）"
+    position="ワークショップ参加"
+    descriptions={[
+      "要件定義に基づくAPI設計・DB設計のグループワーク",
+      "議論・役割分担・チェックリスト運用などチーム設計プロセスを学習",
+      "短時間での要件整理と設計ドキュメント化のスキルを強化",
+    ]}
+    blogUrl="https://zenn.dev/hekuchandao/articles/e65daebaa22742"
+    blogTitle="Zenn - 株式会社ゆめみの 1Dayインターン に参加してみた。"
+  />
+  <Career
+    startDate="2023年9月"
+    endDate="2024年8月"
+    company="株式会社Unicode"
+    position="バックエンドエンジニア（業務委託）"
+    descriptions={[
+      "配送会社APIとの連携機能設計・実装（ShipOne）",
+      "UI改善・デバッグ対応",
+      "複数の外部API仕様差異を吸収するバックエンド設計・実装",
+    ]}
+  />
+  <Career
+    startDate="2021年5月"
+    endDate="2022年6月"
+    company="株式会社doot"
+    position="フルスタックエンジニア（インターン）"
+    descriptions={[
+      "X（旧Twitter）クローラーの開発・運用",
+      "利用者フィードバックを元にしたUI改善",
+      "バックエンドAPIの新機能実装・バグ修正",
+    ]}
+  />
 </div>

@@ -1,28 +1,66 @@
 ---
 interface Props {
-    startDate: string;
-    endDate: string;
-    company: string;
-    position?: string;
-    descriptions?: string[];
+  startDate: string;
+  endDate: string;
+  company: string;
+  position?: string;
+  descriptions?: string[];
+  blogUrl?: string;
+  blogTitle?: string;
 }
 
-const { startDate, endDate, company, position, descriptions } = Astro.props;
+const {
+  startDate,
+  endDate,
+  company,
+  position,
+  descriptions,
+  blogUrl,
+  blogTitle,
+} = Astro.props;
 ---
 
 <div>
-    <p class="text-sm text-gray-500">{startDate} ~ {endDate}</p>
-    <h3 class="font-bold mt-1 text-gray-800">
-        {company} - {position}
-    </h3>
-    {
-        descriptions && (
-            // Interestsのリストはspace-y-2だが、一つの塊であることと、読みやすさを両立しspace-y-1.5としている
-            <ul class="mt-1 list-disc list-inside text-gray-700 space-y-1.5">
-                {descriptions?.map((description) => (
-                    <li>{description}</li>
-                ))}
-            </ul>
-        )
-    }
+  <p class="text-sm text-gray-500">{startDate} ~ {endDate}</p>
+  <h3 class="font-bold mt-1 text-gray-800">
+    {company} - {position}
+  </h3>
+  {
+    descriptions && (
+      // Interestsのリストはspace-y-2だが、一つの塊であることと、読みやすさを両立しspace-y-1.5としている
+      <ul class="mt-1 list-disc list-inside text-gray-700 space-y-1.5">
+        {descriptions?.map((description) => (
+          <li>{description}</li>
+        ))}
+      </ul>
+    )
+  }
+  {
+    blogUrl && (
+      <div class="mt-2 ml-2">
+        <a
+          href={blogUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+        >
+          <svg
+            class="w-4 h-4 mr-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+          {blogTitle || "ブログ記事を読む"}
+        </a>
+      </div>
+    )
+  }
 </div>
