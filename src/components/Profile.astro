@@ -15,7 +15,6 @@ import Other from "./profile/techStack/Other.astro";
 
 import TUTBusImage from "../../public/tut-bus.png";
 
-
 const myName = "広瀬 エイトル";
 const myNameInEnglish = "Heitor Hirose";
 const myRole = "学生エンジニア";
@@ -52,12 +51,12 @@ const myRole = "学生エンジニア";
         class="text-base text-gray-700 leading-relaxed space-y-4"
       >
         <p>
-          東京工科大学 コンピュータサインエス学部 コンピュータサイエンス学科 学部生
+          東京工科大学 コンピュータサインエス学部 コンピュータサイエンス学科
+          学部生
           <br />
           <br />
           愛知県西尾市出身。高校在学時からスタートアップや業務委託案件に参画し、バックエンド・フロントエンド問わず幅広い開発に携わってきました。Python
-          や TypeScript
-          を中心に、API開発、UI改善、外部サービス連携などの実務を経験しました。
+          や TypeScript を中心に、API開発、UI改善、外部サービス連携などの実務を経験しました。
           <br />
           <br />
           現在は株式会社AIdeaLabで新機能開発、バグ修正などに取り組みつつ、業務を通じてインフラ設計やログ設計の重要性を学び、実務レベルで通用する形に落とし込むことを目指しています。
@@ -168,38 +167,57 @@ const myRole = "学生エンジニア";
     <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
       Social
     </h2>
-    <p class="mb-4 text-gray-700">
-      ご気軽に以下のSNSアカウントへご連絡ください。
-    </p>
-    <div class="flex space-x-5 mt-6">
-      <a
-        href="https://x.com/Heitor_Hirose"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-500 hover:text-gray-800 transition-colors"
-        aria-label="X"><div class="text-2xl"><BsTwitterX /></div></a
-      >
-      <a
-        href="https://www.instagram.com/hirose_heitor/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-500 hover:text-gray-800 transition-colors"
-        aria-label="Instagram"><div class="text-2xl"><SiInstagram /></div></a
-      >
-      <a
-        href="https://github.com/HEKUCHAN"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-500 hover:text-gray-800 transition-colors"
-        aria-label="GitHub"><div class="text-2xl"><FaGithub /></div></a
-      >
-      <a
-        href="https://zenn.dev/hekuchandao"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-500 hover:text-gray-800 transition-colors"
-        aria-label="Zenn"><div class="text-2xl"><SiZenn /></div></a
-      >
+    <div
+      class="flex flex-col space-y-1 md:flex-row md:justify-between md:items-center"
+    >
+      <div>
+        <p class="text-gray-700">
+          ご気軽に以下のSNSアカウントへご連絡ください。
+        </p>
+        <div class="flex space-x-5 mt-6">
+          <a
+            href="https://x.com/Heitor_Hirose"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 hover:text-gray-800 transition-colors"
+            aria-label="X"><div class="text-2xl"><BsTwitterX /></div></a
+          >
+          <a
+            href="https://www.instagram.com/hirose_heitor/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 hover:text-gray-800 transition-colors"
+            aria-label="Instagram"
+            ><div class="text-2xl"><SiInstagram /></div></a
+          >
+          <a
+            href="https://github.com/HEKUCHAN"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 hover:text-gray-800 transition-colors"
+            aria-label="GitHub"><div class="text-2xl"><FaGithub /></div></a
+          >
+          <a
+            href="https://zenn.dev/hekuchandao"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-500 hover:text-gray-800 transition-colors"
+            aria-label="Zenn"><div class="text-2xl"><SiZenn /></div></a
+          >
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-start">
+        <Image
+          src="/linuxclub.png"
+          alt="LinuxClub"
+          width={60}
+          height={60}
+          class="opacity-60 hover:opacity-100 transition-opacity"
+        />
+        <div class="flex items-center mt-3 text-sm text-muted-foreground text-gray-600">
+          <span>Member of LinuxClub</span>
+        </div>
+      </div>
     </div>
   </section>
 </div>
