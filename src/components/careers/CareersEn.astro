@@ -1,0 +1,104 @@
+---
+import Career from "./Career.astro";
+---
+
+<div class="space-y-6">
+  <Career
+    startDate="May 2026"
+    endDate="Aug 2026"
+    company="Mercari, Inc."
+    position="Data Engineer Intern"
+    descriptions={[
+      'Improved and added new features to the internal product "Socrates"',
+      "Built and standardized evaluation datasets and workflows for LLMOps",
+      "Enhanced semantic layers to improve data utilization accuracy with LLMs",
+      "Ran multiple PoCs on automated semantic layer construction and maintenance using AI agents",
+    ]}
+  />
+  <Career
+    startDate="Aug 2024"
+    endDate="May 2026"
+    company="AIdeaLab, Inc."
+    position="Full-Stack Engineer (Contract)"
+    descriptions={[
+      "Developed new features, improved UI, and fixed bugs using TypeScript (Next.js), Go, and Python",
+      "Improved RAG performance and built workflows with LangChain",
+      "Handled requirement definition, architecture design, and implementation for client projects",
+    ]}
+  />
+  <Career
+    startDate="Feb 2026"
+    endDate="Mar 2026"
+    company="Sansan, Inc."
+    position="Data Engineer Intern"
+    descriptions={[
+      "Designed and developed an analytics support AI agent on top of the Bill One data platform",
+      "Modeled data with dbt and enabled analysis workflows using BigQuery datasets",
+      "Built analytics workflows by combining internal model knowledge management with AI agents",
+    ]}
+    blogUrl="https://buildersbox.corp-sansan.com/entry/2026/04/09/100000"
+    blogTitle="Sansan Tech Blog - Building a Bill One analytics agent during my internship"
+  />
+  <Career
+    startDate="Aug 2025"
+    endDate="Sep 2025"
+    company="CyberAgent, Inc."
+    position="Backend Engineer Intern"
+    descriptions={[
+      'Joined development of "AI POS," an LLM-powered product, in the AI Business Division',
+      "Led technical selection and architecture design of an LLM observability stack (Langfuse), then deployed it on GKE",
+      "Designed a log collection architecture with OpenTelemetry Collector and implemented it with Cloud Run sidecars",
+      "Built an integrated monitoring platform compatible with multiple LLM frameworks (SmolAgents, LangGraph, etc.)",
+    ]}
+    blogUrl="https://developers.cyberagent.co.jp/blog/archives/59703/"
+    blogTitle="CyberAgent - Internship report on selecting and building an LLM Ops/Observability stack with Langfuse"
+  />
+  <Career
+    startDate="Feb 2025"
+    endDate="Mar 2025"
+    company="CyberAgent, Inc. (Go College)"
+    position="Short-Term Internship"
+    descriptions={[
+      "Intensive training on Go fundamentals, web development, DB/Redis, testing, and performance",
+      "Introduced Clean Architecture in advanced assignments and built observability with OpenTelemetry, pprof, and SigNoz",
+      "Deepened understanding of code quality and performance optimization",
+    ]}
+    blogUrl="https://zenn.dev/hekuchandao/articles/31b5bd1f8ca1d2"
+    blogTitle="Zenn - How I grew through a two-week Go College program by CyberAgent"
+  />
+  <Career
+    startDate="May 2024"
+    endDate="May 2024"
+    company="YUMEMI Inc. (1-Day Internship)"
+    position="Workshop Participant"
+    descriptions={[
+      "Worked in a group on API and database design based on requirements",
+      "Learned practical team design processes including discussion, role allocation, and checklist operation",
+      "Strengthened skills in quickly organizing requirements and producing design documents",
+    ]}
+    blogUrl="https://zenn.dev/hekuchandao/articles/e65daebaa22742"
+    blogTitle="Zenn - My experience joining YUMEMI's 1-Day internship"
+  />
+  <Career
+    startDate="Sep 2023"
+    endDate="Aug 2024"
+    company="Unicode, Inc."
+    position="Backend Engineer (Contract)"
+    descriptions={[
+      "Designed and implemented an integration with shipping carrier APIs (ShipOne)",
+      "Handled UI improvements and debugging support",
+      "Built backend logic to absorb specification differences across multiple external APIs",
+    ]}
+  />
+  <Career
+    startDate="May 2021"
+    endDate="Jun 2022"
+    company="doot, Inc."
+    position="Full-Stack Engineer Intern"
+    descriptions={[
+      "Developed and operated an X (formerly Twitter) crawler",
+      "Improved UI based on user feedback",
+      "Implemented new backend API features and fixed bugs",
+    ]}
+  />
+</div>

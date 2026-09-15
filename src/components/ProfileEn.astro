@@ -4,51 +4,46 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { SiInstagram, SiZenn } from "react-icons/si";
 import LastArticles from "./articles/LastArticles.astro";
-import Careers from "./careers/Careers.astro";
+import CareersEn from "./careers/CareersEn.astro";
 import Works from "./profile/Works.astro";
 
 import TUTBusImage from "../../public/tut-bus.png";
 import heitorHiroseImage from "../assets/heitor_hirose.jpg";
 
-const myName = "広瀬 エイトル";
-const myNameInEnglish = "Heitor Hirose";
-const myRole = "学生エンジニア";
+const myName = "Heitor Hirose";
+const myRole = "Student Engineer";
 ---
 
-<!-- ===== コンテンツコンテナ ===== -->
 <div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
   <div class="flex justify-end mb-6">
     <div class="inline-flex items-center text-sm text-gray-500">
       <span class="mr-2">Language:</span>
-      <span class="font-semibold text-gray-900">日本語</span>
-      <span class="mx-2 text-gray-400">/</span>
       <a
-        href="/en"
+        href="/"
         class="text-gray-500 hover:text-black hover:underline transition-colors"
       >
-        English
+        日本語
       </a>
+      <span class="mx-2 text-gray-400">/</span>
+      <span class="font-semibold text-gray-900">English</span>
     </div>
   </div>
-  <!-- ===== ヘッダー情報 ===== -->
   <header class="mb-16 flex items-center space-x-6">
     <Image
       src={heitorHiroseImage}
-      alt="アイコン画像"
+      alt="Profile icon"
       class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gray-300"
       priority
     />
     <div>
-      <p class="text-gray-500 text-xl mb-1">{myName}</p>
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
-        {myNameInEnglish}
+        {myName}
       </h1>
       <p class="text-lg text-gray-600 mt-1">{myRole}</p>
     </div>
   </header>
 
   <main>
-    <!-- ===== Aboutセクション ===== -->
     <section id="about" class="mb-16">
       <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
         About
@@ -58,65 +53,66 @@ const myRole = "学生エンジニア";
         class="text-base text-gray-700 leading-relaxed space-y-4"
       >
         <p>
-          東京工科大学 コンピュータサインエス学部 コンピュータサイエンス学科
-          学部生
+          Undergraduate student in the Department of Computer Science, School
+          of Computer Science, Tokyo University of Technology.
           <br />
           <br />
-          愛知県西尾市出身。高校在学時からスタートアップや業務委託案件に参画し、バックエンド・フロントエンド問わず幅広い開発に携わってきました。Python
-          や TypeScript を中心に、API開発、UI改善、外部サービス連携などの実務を経験しました。
+          Born in Nishio, Aichi, I started joining startup projects and
+          contract development work while still in high school. Since then, I
+          have worked across both backend and frontend development, mainly using
+          Python and TypeScript for API development, UI improvements, and
+          external service integrations.
           <br />
           <br />
-          Snowflakeやデータパイプラインの設計・運用にも強い関心を持っていて、将来はデータエンジニア、またはフルスタックエンジニアとしてのキャリアも視野に入れています。
-          エンジニアとしてのモットーは「未知の領域でも臆せず挑戦し、糧にすること」です。
+          I am also deeply interested in designing and operating Snowflake-based
+          analytics platforms and data pipelines. Looking ahead, I aim to grow
+          as either a data engineer or a full-stack engineer. My core mindset as
+          an engineer is to take on unfamiliar challenges and turn them into
+          opportunities for growth.
         </p>
       </div>
     </section>
   </main>
 
-  <!-- ===== Careerセクション ===== -->
   <section id="career" class="mb-16">
     <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
       Career
     </h2>
-    <Careers />
+    <CareersEn />
   </section>
 
-  <!-- ===== Interestsセクション ===== -->
   <section id="interests" class="mb-16">
     <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
       Interests
     </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>ログ収集、分析基盤の設計・構築・運用</li>
-      <li>データパイプラインの設計・運用</li>
-      <li>Snowflakeを活用したデータ分析基盤の構築</li>
-      <li>LLMやRAG、ワークフローなどの生成AI技術の活用・応用</li>
-      <li>セマンティックレイヤーを用いたAI Agentの性能評価</li>
+      <li>Designing, building, and operating log collection and analytics platforms</li>
+      <li>Design and operations of data pipelines</li>
+      <li>Building analytics platforms with Snowflake</li>
+      <li>Applying generative AI technologies such as LLMs, RAG, and workflow automation</li>
+      <li>Evaluating AI agent performance with semantic layers</li>
     </ul>
   </section>
 
-  <!-- ===== Worksセクション ===== -->
   <section id="works" class="mb-16">
     <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
       Works
     </h2>
 
-    <!-- 作品リスト -->
     <div class="space-y-12">
       <Works
-        projectName="東京工科大学 - スクールバス時刻表"
-        projectDescription="ハッカソンで開発した非公式の東京工科大学のスクールバスの時刻表を提供するWebサイトです。日々の学生、教職員の生活を手助けすることを目的にして開発しております。（開発中）"
+        projectName="Tokyo University of Technology - School Bus Timetable"
+        projectDescription="An unofficial web app that provides school bus timetables for Tokyo University of Technology, originally built at a hackathon. We are developing it to support students and staff in their daily campus life. (In development)"
         projectImage={TUTBusImage}
         projectLink="https://tut-bus.lcn.ad.jp/"
         githubLink="https://github.com/lc-tut/tut-bus"
         technologies={["Next.js", "TypeScript", "Go", "TypeSpec"]}
       />
 
-      <p>Will continue to add more works...</p>
+      <p>More projects will be added soon...</p>
     </div>
   </section>
 
-  <!-- ===== Latest Articlesセクション ===== -->
   <section id="latest-articles" class="mb-16">
     <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-8">
       Latest Articles
@@ -129,12 +125,11 @@ const myRole = "学生エンジニア";
         rel="noopener noreferrer"
         class="text-gray-600 hover:text-black hover:underline font-medium transition-colors"
       >
-        Zennで他の記事も見る &rarr;
+        View more articles on Zenn &rarr;
       </a>
     </div>
   </section>
 
-  <!-- ===== Socialセクション ===== -->
   <section id="social">
     <h2 class="text-2xl font-bold border-b-2 border-gray-300 pb-2 mb-6">
       Social
@@ -144,7 +139,7 @@ const myRole = "学生エンジニア";
     >
       <div>
         <p class="text-gray-700">
-          ご気軽に以下のSNSアカウントへご連絡ください。
+          Feel free to reach out through any of the social accounts below.
         </p>
         <div class="flex space-x-5 mt-6">
           <a
