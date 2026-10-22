@@ -17,6 +17,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@vercel/speed-insights": "^2.0.0",
     "astro": "^7.4.2",
     "dayjs": "^1.11.23",
     "react": "^19.3.1",
