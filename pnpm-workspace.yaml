@@ -1,0 +1,4 @@
+overrides:
+  mdast-util-to-hast@<13.2.1: ^13.2.1
+  picomatch@<2.3.2: ^2.3.2
+  source-map-js@<1.2.2: ^1.2.2
