@@ -3,31 +3,90 @@
   "routes": [
     {
       "src": "^/(?!_astro/|~partytown/).*$",
-      "headers": { "Vary": "Accept, Accept-Encoding" },
+      "headers": {
+        "Vary": "Accept, Accept-Encoding"
+      },
       "continue": true
     },
     {
       "src": "^/.+\\.md$",
-      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      },
       "continue": true
     },
     {
       "src": "^/(?:index\\.html)?$",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "headers": {
+        "Link": "</.well-known/api-catalog>; rel=\"api-catalog\", </openapi.json>; rel=\"service-desc\"; type=\"application/json\", </llms.txt>; rel=\"service-doc\"; type=\"text/plain\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+      },
+      "continue": true
+    },
+    {
+      "src": "^/en(?:/|/index\\.html)?$",
+      "headers": {
+        "Link": "</.well-known/api-catalog>; rel=\"api-catalog\", </openapi.json>; rel=\"service-desc\"; type=\"application/json\", </llms.txt>; rel=\"service-doc\"; type=\"text/plain\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\", </en.md>; rel=\"alternate\"; type=\"text/markdown\""
+      },
+      "continue": true
+    },
+    {
+      "src": "^/\\.well-known/(.*)$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/\\.well-known/api-catalog$",
+      "headers": {
+        "Content-Type": "application/linkset+json; profile=\"https://www.rfc-editor.org/info/rfc9727\"",
+        "Link": "</.well-known/api-catalog>; rel=\"api-catalog\""
+      },
+      "continue": true
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      },
       "dest": "/index.md"
     },
     {
       "src": "^/(en|about|contact|privacy)(?:/|/index\\.html)?$",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      },
       "dest": "/$1.md"
     },
-    { "handle": "filesystem" },
+    {
+      "handle": "filesystem"
+    },
     {
       "src": "^/.*$",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      },
       "status": 404,
       "dest": "/404.md"
     }
