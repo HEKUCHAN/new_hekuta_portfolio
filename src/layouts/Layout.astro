@@ -100,5 +100,12 @@ const jsonLd = page ? serializeJsonLd(buildPageJsonLd(page, ogImageUrl)) : undef
 	</head>
 	<body>
 		<slot />
+		<script>
+			import { registerSiteTools } from "../lib/webmcp";
+
+			const modelContext =
+				(document as any).modelContext ?? (navigator as any).modelContext;
+			void registerSiteTools(modelContext, (input, init) => fetch(input, init));
+		</script>
 	</body>
 </html>

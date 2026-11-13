@@ -51,6 +51,7 @@ const mimeTypes: Record<string, string> = {
   ".xml": "application/xml",
   ".png": "image/png",
   ".js": "application/javascript",
+  ".json": "application/json",
 };
 
 export function loadRoutes(vercelJsonPath: string): Route[] {
