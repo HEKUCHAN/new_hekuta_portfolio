@@ -3,7 +3,7 @@ import Parser from 'rss-parser';
 
 const MY_ZENN_USERNAME = "hekuchandao"
 
-interface Post {
+export interface Post {
     title: string;
     date: string;
     slug: string;

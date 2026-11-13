@@ -6,6 +6,8 @@ import { SiInstagram, SiZenn } from "react-icons/si";
 import LastArticles from "./articles/LastArticles.astro";
 import CareersEn from "./careers/CareersEn.astro";
 import Works from "./profile/Works.astro";
+import SiteFooter from "./common/SiteFooter.astro";
+import { profileEn as profile } from "../data/profile";
 
 import TUTBusImage from "../../public/tut-bus.png";
 import heitorHiroseImage from "../assets/heitor_hirose.jpg";
@@ -53,22 +55,19 @@ const myRole = "Student Engineer";
         class="text-base text-gray-700 leading-relaxed space-y-4"
       >
         <p>
-          Undergraduate student in the Department of Computer Science, School
-          of Computer Science, Tokyo University of Technology.
-          <br />
-          <br />
-          Born in Nishio, Aichi, I started joining startup projects and
-          contract development work while still in high school. Since then, I
-          have worked across both backend and frontend development, mainly using
-          Python and TypeScript for API development, UI improvements, and
-          external service integrations.
-          <br />
-          <br />
-          I am also deeply interested in designing and operating Snowflake-based
-          analytics platforms and data pipelines. Looking ahead, I aim to grow
-          as either a data engineer or a full-stack engineer. My core mindset as
-          an engineer is to take on unfamiliar challenges and turn them into
-          opportunities for growth.
+          {
+            profile.about.map((paragraph, i) => (
+              <Fragment>
+                {i > 0 && (
+                  <Fragment>
+                    <br />
+                    <br />
+                  </Fragment>
+                )}
+                {paragraph}
+              </Fragment>
+            ))
+          }
         </p>
       </div>
     </section>
@@ -86,11 +85,7 @@ const myRole = "Student Engineer";
       Interests
     </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Designing, building, and operating log collection and analytics platforms</li>
-      <li>Design and operations of data pipelines</li>
-      <li>Building analytics platforms with Snowflake</li>
-      <li>Applying generative AI technologies such as LLMs, RAG, and workflow automation</li>
-      <li>Evaluating AI agent performance with semantic layers</li>
+      {profile.interests.map((interest) => <li>{interest}</li>)}
     </ul>
   </section>
 
@@ -100,16 +95,13 @@ const myRole = "Student Engineer";
     </h2>
 
     <div class="space-y-12">
-      <Works
-        projectName="Tokyo University of Technology - School Bus Timetable"
-        projectDescription="An unofficial web app that provides school bus timetables for Tokyo University of Technology, originally built at a hackathon. We are developing it to support students and staff in their daily campus life. (In development)"
-        projectImage={TUTBusImage}
-        projectLink="https://tut-bus.lcn.ad.jp/"
-        githubLink="https://github.com/lc-tut/tut-bus"
-        technologies={["Next.js", "TypeScript", "Go", "TypeSpec"]}
-      />
+      {
+        profile.works.map((work) => (
+          <Works {...work} projectImage={TUTBusImage} />
+        ))
+      }
 
-      <p>More projects will be added soon...</p>
+      <p>{profile.worksFooter}</p>
     </div>
   </section>
 
@@ -196,4 +188,6 @@ const myRole = "Student Engineer";
       </a>
     </div>
   </section>
+
+  <SiteFooter lang="en" />
 </div>

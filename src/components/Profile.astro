@@ -6,6 +6,8 @@ import { SiInstagram, SiZenn } from "react-icons/si";
 import LastArticles from "./articles/LastArticles.astro";
 import Careers from "./careers/Careers.astro";
 import Works from "./profile/Works.astro";
+import SiteFooter from "./common/SiteFooter.astro";
+import { profileJa as profile } from "../data/profile";
 
 import TUTBusImage from "../../public/tut-bus.png";
 import heitorHiroseImage from "../assets/heitor_hirose.jpg";
@@ -58,16 +60,19 @@ const myRole = "学生エンジニア";
         class="text-base text-gray-700 leading-relaxed space-y-4"
       >
         <p>
-          東京工科大学 コンピュータサインエス学部 コンピュータサイエンス学科
-          学部生
-          <br />
-          <br />
-          愛知県西尾市出身。高校在学時からスタートアップや業務委託案件に参画し、バックエンド・フロントエンド問わず幅広い開発に携わってきました。Python
-          や TypeScript を中心に、API開発、UI改善、外部サービス連携などの実務を経験しました。
-          <br />
-          <br />
-          Snowflakeやデータパイプラインの設計・運用にも強い関心を持っていて、将来はデータエンジニア、またはフルスタックエンジニアとしてのキャリアも視野に入れています。
-          エンジニアとしてのモットーは「未知の領域でも臆せず挑戦し、糧にすること」です。
+          {
+            profile.about.map((paragraph, i) => (
+              <Fragment>
+                {i > 0 && (
+                  <Fragment>
+                    <br />
+                    <br />
+                  </Fragment>
+                )}
+                {paragraph}
+              </Fragment>
+            ))
+          }
         </p>
       </div>
     </section>
@@ -87,11 +92,7 @@ const myRole = "学生エンジニア";
       Interests
     </h2>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>ログ収集、分析基盤の設計・構築・運用</li>
-      <li>データパイプラインの設計・運用</li>
-      <li>Snowflakeを活用したデータ分析基盤の構築</li>
-      <li>LLMやRAG、ワークフローなどの生成AI技術の活用・応用</li>
-      <li>セマンティックレイヤーを用いたAI Agentの性能評価</li>
+      {profile.interests.map((interest) => <li>{interest}</li>)}
     </ul>
   </section>
 
@@ -103,16 +104,13 @@ const myRole = "学生エンジニア";
 
     <!-- 作品リスト -->
     <div class="space-y-12">
-      <Works
-        projectName="東京工科大学 - スクールバス時刻表"
-        projectDescription="ハッカソンで開発した非公式の東京工科大学のスクールバスの時刻表を提供するWebサイトです。日々の学生、教職員の生活を手助けすることを目的にして開発しております。（開発中）"
-        projectImage={TUTBusImage}
-        projectLink="https://tut-bus.lcn.ad.jp/"
-        githubLink="https://github.com/lc-tut/tut-bus"
-        technologies={["Next.js", "TypeScript", "Go", "TypeSpec"]}
-      />
+      {
+        profile.works.map((work) => (
+          <Works {...work} projectImage={TUTBusImage} />
+        ))
+      }
 
-      <p>Will continue to add more works...</p>
+      <p>{profile.worksFooter}</p>
     </div>
   </section>
 
@@ -201,4 +199,6 @@ const myRole = "学生エンジニア";
       </a>
     </div>
   </section>
+
+  <SiteFooter lang="ja" />
 </div>

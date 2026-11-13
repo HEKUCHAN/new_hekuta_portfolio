@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hekuta.net/sitemap.xml

@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="404 Not Found - Heitor Hirose"
+  description="The requested page does not exist on hekuta.net."
+  indexable={false}
+>
+  <div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
+    <main>
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">404 Not Found</h1>
+      <p class="text-base text-gray-700 leading-relaxed mt-6">
+        お探しのページは見つかりませんでした。URLが間違っているか、ページが移動した可能性があります。
+      </p>
+      <p lang="en" class="text-base text-gray-700 leading-relaxed mt-2">
+        The page you requested does not exist on hekuta.net.
+      </p>
+      <ul class="mt-8 list-disc list-inside text-gray-700 space-y-1.5">
+        <li><a href="/" class="text-blue-600 hover:text-blue-800 hover:underline">トップページ (日本語)</a></li>
+        <li><a href="/en" class="text-blue-600 hover:text-blue-800 hover:underline">Home (English)</a></li>
+        <li><a href="/sitemap.xml" class="text-blue-600 hover:text-blue-800 hover:underline">Sitemap</a></li>
+      </ul>
+    </main>
+  </div>
+</Layout>

@@ -1,0 +1,9 @@
+---
+import InfoPageView from "../components/InfoPageView.astro";
+import { privacyPage as page } from "../data/pages";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout page={page}>
+  <InfoPageView page={page} />
+</Layout>

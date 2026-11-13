@@ -9,7 +9,7 @@ import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://hekuta.net',
+  site: 'https://hekuta.net',
   vite: {
     ssr: {
       noExternal: ['react-icons']

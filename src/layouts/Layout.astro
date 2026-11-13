@@ -1,19 +1,44 @@
 ---
+import { getImage } from "astro:assets";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import heitorHiroseImage from "../assets/heitor_hirose.jpg";
 import GoogleAnalytics from "../components/common/GoogleAnalytics.astro";
+import type { InfoPage, SitePage } from "../data/pages";
+import { homePageEn, homePageJa } from "../data/pages";
+import {
+	absoluteUrl,
+	buildPageJsonLd,
+	serializeJsonLd,
+} from "../lib/structured-data";
 import "../styles/global.css";
 
 interface Props {
+	/** Page entry from src/data/pages.ts (drives canonical, OG, JSON-LD). */
+	page?: SitePage & { slug?: InfoPage["slug"] };
 	lang?: string;
 	description?: string;
 	title?: string;
+	/** Set false for pages that must not be indexed (e.g. 404). */
+	indexable?: boolean;
 }
 
 const {
-	lang = "ja",
-	description = "広瀬エイトル (Heitor Hirose) のプロフィール",
-	title = "About HeitorHirose",
+	page,
+	lang = page?.lang ?? "ja",
+	description = page?.description ?? "広瀬エイトル (Heitor Hirose) のプロフィール",
+	title = page?.title ?? "About HeitorHirose",
+	indexable = true,
 } = Astro.props;
+
+const ogImage = await getImage({
+	src: heitorHiroseImage,
+	width: 600,
+	format: "jpeg",
+});
+const ogImageUrl = absoluteUrl(ogImage.src);
+const canonicalUrl = page ? absoluteUrl(page.path) : undefined;
+const isHome = page === homePageJa || page === homePageEn;
+const jsonLd = page ? serializeJsonLd(buildPageJsonLd(page, ogImageUrl)) : undefined;
 ---
 
 <!doctype html>
@@ -24,6 +49,45 @@ const {
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		{!indexable && <meta name="robots" content="noindex" />}
+		{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+		{
+			isHome && (
+				<Fragment>
+					<link rel="alternate" hreflang="ja" href={absoluteUrl(homePageJa.path)} />
+					<link rel="alternate" hreflang="en" href={absoluteUrl(homePageEn.path)} />
+					<link rel="alternate" hreflang="x-default" href={absoluteUrl(homePageJa.path)} />
+				</Fragment>
+			)
+		}
+		{
+			page && (
+				<link
+					rel="alternate"
+					type="text/markdown"
+					href={absoluteUrl(page.markdownPath)}
+				/>
+			)
+		}
+		<meta property="og:type" content={isHome ? "profile" : "website"} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+		<meta property="og:site_name" content="Heitor Hirose" />
+		<meta property="og:locale" content={lang === "en" ? "en_US" : "ja_JP"} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:alt" content="Heitor Hirose" />
+		{
+			isHome && (
+				<Fragment>
+					<meta property="profile:first_name" content="Heitor" />
+					<meta property="profile:last_name" content="Hirose" />
+				</Fragment>
+			)
+		}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@Heitor_Hirose" />
+		{jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

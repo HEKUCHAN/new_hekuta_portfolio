@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "astro build && node --test \"tests/**/*.test.ts\"",
+    "test:only": "node --test \"tests/**/*.test.ts\""
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.9",

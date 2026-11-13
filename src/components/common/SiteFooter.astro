@@ -1,0 +1,33 @@
+---
+import { infoPages } from "../../data/pages";
+
+interface Props {
+  lang?: "ja" | "en";
+}
+
+const { lang = "ja" } = Astro.props;
+const labels: Record<string, { ja: string; en: string }> = {
+  about: { ja: "プロフィール", en: "About" },
+  contact: { ja: "お問い合わせ", en: "Contact" },
+  privacy: { ja: "プライバシーポリシー", en: "Privacy" },
+};
+---
+
+<footer class="mt-16 pt-6 border-t border-gray-300 text-sm text-gray-500">
+  <nav aria-label={lang === "ja" ? "サイト情報" : "Site information"}>
+    <ul class="flex flex-wrap gap-x-5 gap-y-2">
+      {
+        infoPages.map((p) => (
+          <li>
+            <a
+              href={p.path}
+              class="hover:text-black hover:underline transition-colors"
+            >
+              {labels[p.slug][lang]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</footer>

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "^/(?!_astro/|~partytown/).*$",
+      "headers": { "Vary": "Accept, Accept-Encoding" },
+      "continue": true
+    },
+    {
+      "src": "^/.+\\.md$",
+      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "continue": true
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "dest": "/index.md"
+    },
+    {
+      "src": "^/(en|about|contact|privacy)(?:/|/index\\.html)?$",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "dest": "/$1.md"
+    },
+    { "handle": "filesystem" },
+    {
+      "src": "^/.*$",
+      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
+      "headers": { "Content-Type": "text/markdown; charset=utf-8" },
+      "status": 404,
+      "dest": "/404.md"
+    }
+  ]
+}
